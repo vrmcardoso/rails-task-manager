@@ -5,3 +5,8 @@
 <% else %>
   <p><%= "This task is incomplete" %></p>
 <% end %>
+<button><%= link_to "Edit task", edit_path(@task), style:"text-decoration:none; color:black;" %></button>
+<button><%= link_to "Delete task", task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, style:"text-decoration:none; color:black;" %></button>
+
+<%= link_to "Task list", tasks_path, style:"text-decoration:none; color:blue;" %>
